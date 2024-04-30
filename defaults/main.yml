@@ -5,7 +5,7 @@
 # -------------------------
 dbs_apt_default_host: "deb.debian.org"
 dbs_apt_use_src: false
-dbs_apt_components: "main contrib non-free"
+dbs_apt_components: "main contrib non-free{% if ansible_distribution_major_version is version('12', '>=') and ansible_distribution == 'Debian' %} non-free-firmware{% endif %}"
 dbs_repo_old: "{% if ansible_local | d() and ansible_local.apt_sources | d() and ansible_local.apt_sources.dbs_repo_old | d() and ansible_local.apt_sources.dbs_repo_old | d() %}{{ ansible_local.apt_sources.dbs_repo_old }}{% else %}['dummy']{% endif %}"
 
 # -------------------------

@@ -19,11 +19,11 @@ This role bootstraps Debian/Devuan/Ubuntu/Raspbian hosts:
 Supported versions
 
 | OS                     | Working      | Stable (active support) |
-| ---------------------- | -------      | ----------------------- |
-| Debian Stretch (9)     | Yes          | Yes                     |
+| ---------------------- | -------      |-------------------------|
+| Debian Stretch (9)     | Yes          | No                      |
 | Debian Buster (10)     | Yes          | Yes                     |
 | Debian Bullseye (11)   | Yes          | Yes                     |
-| Debian Bookworm (12)   | Yes          | No                      |
+| Debian Bookworm (12)   | Yes          | Yes                     |
 | Devuan Ascii (2)       | Yes          | No                      |
 | Raspbian Stretch (9)   | Experimental | No                      |
 | Raspbian Buster (10)   | Experimental | No                      |
@@ -47,7 +47,7 @@ Theses variables define hostname to configure APT (normal repo and backports):
 
 - `dbs_apt_default_host`: repository host. It can replace the last one (installed with this role) with a new one
 - `dbs_apt_use_src`: install "deb-src" repositories (default: false)
-- `dbs_apt_components`: components uses in sources.list (default: "main contrib non-free")
+- `dbs_apt_components`: components uses in sources.list (default: "main contrib non-free non-free-firmware")
 
 ### Role setup
 
